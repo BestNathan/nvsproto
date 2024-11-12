@@ -1,0 +1,87 @@
+{
+  "name": "nvsproto",
+  "displayName": "nvsproto",
+  "description": "vscode protobuf extension",
+  "version": "0.0.1-beta0",
+  "publisher": "Nathan",
+  "repository": {
+    "url": "https://github.com/BestNathan/nvsproto.git"
+  },
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Snippets",
+    "Programming Languages"
+  ],
+  "main": "./dist/extension.js",
+  "scripts": {
+    "vscode:prepublish": "pnpm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test",
+    "vscode:package": "vsce package --no-dependencies"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.9",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.95.0",
+    "@typescript-eslint/eslint-plugin": "^8.10.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "@vscode/vsce": "^3.2.1",
+    "eslint": "^9.13.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.6.3",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "protobuf",
+        "extensions": [
+          ".proto"
+        ],
+        "aliases": [
+          "pb",
+          "protobuf"
+        ],
+        "configuration": "./assets/language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "protobuf",
+        "scopeName": "source.proto",
+        "path": "./assets/syntaxes/protobuf.tmLanguage.json"
+      },
+      {
+        "scopeName": "markdown.codeblock.proto",
+        "path": "./assets/syntaxes/protobuf.codeblock.json",
+        "injectTo": [
+          "text.html.markdown"
+        ]
+      }
+    ],
+    "snippets": [
+      {
+        "language": "protobuf",
+        "path": "./assets/snippets/proto3.json"
+      },
+      {
+        "language": "protobuf",
+        "path": "./assets/snippets/google-api.json"
+      }
+    ]
+  }
+}
