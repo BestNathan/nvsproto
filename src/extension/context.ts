@@ -5,7 +5,7 @@ import { BufLSPProvider } from "./lsp_buf";
 export class Context {
   private _lsp: LSP;
   constructor(private ctx: ExtensionContext) {
-    this._lsp = new LSP(new BufLSPProvider());
+    this._lsp = new LSP(new BufLSPProvider(ctx));
   }
 
   async start() {
