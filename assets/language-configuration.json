@@ -18,6 +18,13 @@
     ["<", ">"]
   ],
 
+  "colorizedBracketPairs": [
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"],
+    ["<", ">"]
+  ],
+
   "autoClosingPairs": [
     { "open": "{", "close": "}" },
     { "open": "[", "close": "]" },
@@ -54,5 +61,13 @@
         "appendText": "* "
       }
     }
-  ]
+  ],
+
+  "folding": {
+    "offSide": false,
+    "markers": {
+      "start": "^\\s*(message|enum|service|extend)\\b.*\\{",
+      "end": "^\\s*\\}"
+    }
+  }
 }
