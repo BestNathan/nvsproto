@@ -16,7 +16,7 @@ export class BufLSPProvider implements LSPServerProvider {
       run: {
         command: cmd,
         args: ["beta", "lsp", "--log-format", "text"],
-        transport: TransportKind.socket,
+        transport: TransportKind.pipe,
       },
       debug: {
         command: cmd,
