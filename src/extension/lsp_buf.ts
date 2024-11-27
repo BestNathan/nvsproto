@@ -13,12 +13,10 @@ export class BufLSPProvider implements LSPServerProvider {
     const cmd = this.vctx.asAbsolutePath("bin/buf");
 
     return {
-
-      
       run: {
         command: cmd,
         args: ["beta", "lsp", "--log-format", "text"],
-        transport: TransportKind.pipe,
+        transport: TransportKind.socket,
       },
       debug: {
         command: cmd,

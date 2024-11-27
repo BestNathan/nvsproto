@@ -45,7 +45,80 @@
     "webpack": "^5.95.0",
     "webpack-cli": "^5.1.4"
   },
+  "activationEvents": [
+    "workspaceContains:**/*.proto"
+  ],
   "contributes": {
+    "configurationDefaults": {
+      "[protobuf]": {
+        "editor.semanticHighlighting.enabled": true
+      },
+      "editor.semanticTokenColorCustomizations": {
+        "enabled": true,
+        "rules": {
+          "namespace": {
+            "foreground": "#4B91E2",
+            "fontStyle": "bold"
+          },
+          "type": {
+            "foreground": "#4EC9B0",
+            "fontStyle": "bold"
+          },
+          "enum": {
+            "foreground": "#66d16f",
+            "fontStyle": "bold"
+          },
+          "struct": {
+            "foreground": "#4EC9B0",
+            "fontStyle": "bold"
+          },
+          "interface": {
+            "foreground": "#4EC9B0",
+            "fontStyle": "bold"
+          },
+          "typeParameter": {
+            "foreground": "#4EC9B0",
+            "fontStyle": "bold"
+          },
+          "parameter": {
+            "foreground": "#ABB2BF",
+            "fontStyle": "bold"
+          },
+          "property": {
+            "foreground": "#4FC1FF",
+            "fontStyle": "bold"
+          },
+          "enumMember": {
+            "foreground": "#4EC9B0",
+            "fontStyle": "bold"
+          },
+          "method": {
+            "foreground": "#DCDCAA",
+            "fontStyle": "bold"
+          },
+          "keyword": {
+            "foreground": "#569CD6",
+            "fontStyle": "bold"
+          },
+          "modifier": {
+            "foreground": "#569CD6",
+            "fontStyle": "bold"
+          },
+          "string": {
+            "foreground": "#CE9178",
+            "fontStyle": "bold"
+          },
+          "number": {
+            "foreground": "#B5CEA8",
+            "fontStyle": "bold"
+          },
+          "decorator": {
+            "foreground": "#FFB454",
+            "fontStyle": "bold"
+          }
+        }
+      }
+    },
     "languages": [
       {
         "id": "protobuf",
